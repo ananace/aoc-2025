@@ -1,0 +1,5 @@
+/bin/
+/obj/
+
+Day0.*
+*.inp.real
