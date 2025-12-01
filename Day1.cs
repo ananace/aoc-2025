@@ -35,7 +35,7 @@ public class Day1 : IAoC
   {
     int zero = 0;
 
-    int at = 50 + 100;
+    int at = 50 + 1000;
     foreach (var change in changes)
     {
       if (at % 100 == 0)
