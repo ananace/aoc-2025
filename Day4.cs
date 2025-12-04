@@ -46,7 +46,6 @@ public class Day4 : IAoC
   {
     int moved = 0, movedRound;
 
-    var rollsCopy = rolls;
     var rollsMut = rolls.ToArray();
 
     do
@@ -56,10 +55,10 @@ public class Day4 : IAoC
       {
         for (int y = 0; y < size.Item2; ++y)
         {
-          if (!rollsCopy[x + y * size.Item1])
+          if (!rollsMut[x + y * size.Item1])
             continue;
 
-          var adj = CountAdjacent(x, y, rollsCopy);
+          var adj = CountAdjacent(x, y, rollsMut);
           if (adj >= 4)
             continue;
 
@@ -69,7 +68,6 @@ public class Day4 : IAoC
       }
 
       moved += movedRound;
-      rollsCopy = rollsMut.ToArray();
     } while (movedRound > 0);
 
     Console.WriteLine($"Moved {moved} movable rolls.");
