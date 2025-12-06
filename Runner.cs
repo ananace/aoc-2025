@@ -52,7 +52,7 @@ public class Runner
 
     Console.WriteLine("- Reading input...");
     var data = File.ReadLines(input);
-    day.Input(data.Select(l => l.Trim()));
+    day.Input(data.Select(l => l.TrimEnd('\n')));
 
     if (day.GetType().GetMethod("PreCalc") is MethodInfo meth)
     {
